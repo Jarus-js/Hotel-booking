@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
-//import { items } from "./data";
+import { items } from "./data";
 
-import { client } from "./Contentful";
+//import { client } from "./Contentful";
 const RoomContext = React.createContext();
 //Room Provider
 class RoomProvider extends Component {
@@ -22,13 +22,13 @@ class RoomProvider extends Component {
   };
 
   componentDidMount() {
-    client
-      .getEntries({
-        content_type: "hotelvalley"
-      })
-      .then(response => this.formatData(response.items))
-      .catch(console.error);
-    //this.formatData(items);
+    // client
+    //   .getEntries({
+    //     content_type: "hotelvalley"
+    //   })
+    //   .then(response => this.formatData(response.items))
+    //   .catch(console.error);
+    this.formatData(items);
   }
 
   formatData = items => {
